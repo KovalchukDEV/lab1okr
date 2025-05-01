@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Складна таблиця Kodemy</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            border: 1px solid #333;
+            font-family: sans-serif;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+        }
+
+        thead {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .group-math {
+            background-color: #e6ffe6;
+        }
+
+        .group-prog {
+            background-color: #ffe6e6;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .indent {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align: center; padding: 20px;">
+        <h1>Складна таблиця з розкладом та інформацією</h1>
+        <nav>
+            <a href="/courses.html">Курси</a> |
+            <a href="/teachers.html">Викладачі</a> |
+            <a href="/aboutus.html">Про нас</a> |
+            <a href="/complex_table.html">Складна таблиця</a> |
+            <a href="https://prometheus.org.ua/" target="_blank">Prometheus</a>
+        </nav>
+    </header>
+
+    <main style="padding: 20px;">
+        <table>
+            <caption>Розклад занять та інформація про викладачів</caption>
+            <colgroup>
+                <col class="group-math" span="2">
+                <col class="group-prog" span="3">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2" class="align-center">День</th>
+                    <th rowspan="2" class="align-center">Час</th>
+                    <th colspan="2" class="align-center">Програмування</th>
+                    <th rowspan="2" class="align-center">Викладач</th>
+                </tr>
+                <tr>
+                    <th class="align-center">Курс</th>
+                    <th class="align-center">Рівень</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="align-center">Понеділок</td>
+                    <td class="align-center">15:00</td>
+                    <td class="align-left">Основи Python</td>
+                    <td class="align-center">Початковий</td>
+                    <td class="align-left">Хомич Назарій</td>
+                </tr>
+                <tr>
+                    <td class="align-center">17:00</td>
+                    <td class="align-left" colspan="2">Веб-розробка (HTML/CSS)</td>
+                    <td class="align-left">Ковальчук Станіслав</td>
+                </tr>
+                <tr>
+                    <td class="align-center">19:00</td>
+                    <td class="align-left">JavaScript для початківців</td>
+                    <td class="align-center">Початковий</td>
+                    <td class="align-left">Ковальчук Станіслав</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="align-center">Середа</td>
+                    <td class="align-center">16:00</td>
+                    <td class="align-left">Алгоритми на Python</td>
+                    <td class="align-center">Середній</td>
+                    <td class="align-left">Хомич Назарій</td>
+                </tr>
+                <tr>
+                    <td class="align-center">18:00</td>
+                    <td class="align-left">Розширені можливості CSS</td>
+                    <td class="align-center">Середній</td>
+                    <td class="align-left">Ковальчук Станіслав</td>
+                </tr>
+                <tr>
+                    <td class="align-center">П'ятниця</td>
+                    <td class="align-center">14:00</td>
+                    <td class="align-left" colspan="3">Підсумкове заняття з програмування (всі викладачі)</td>
+                </tr>
+            </tbody>
+            <colgroup>
+                <col style="background-color:#ccffcc;" span="2">
+                <col style="background-color:#ffcccc;" span="3">
+            </colgroup>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="align-right">Примітка: Розклад може змінюватися.</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <section style="margin-top: 30px;">
+            <h2>Додаткова інформація про викладачів</h2>
+            <ul>
+                <li><span style="font-weight: bold;">Ковальчук Станіслав:</span> Досвід роботи - 10 років. Спеціалізується на веб-розробці та математиці для програмістів.</li>
+                <li><span style="font-weight: bold;">Хомич Назарій:</span> Сертифікований спеціаліст з Python. Має досвід у розробці навчальних курсів для початківців.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 10px; background-color: #ddd;">
+        <p>&copy; 2025 Kodemy. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

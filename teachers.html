@@ -4,42 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kodemy - Викладачі</title>
+    <style>
+        .teacher-name { font-size: 1.1em; font-weight: bold; color: #555; }
+    </style>
 </head>
-<body>
-    <header>
+<body style="background-color: #ceffa3;">
+    <header style="padding: 20px;">
         <h1>Наша команда викладачів</h1>
-        <p>Професіонали, які надихають на навчання.</p>
+        <nav>
+            <a href="/courses.html">Курси</a> |
+            <a href="/teachers.html">Викладачі</a> |
+            <a href="/aboutus.html">Про нас</a> |
+            <a href="/complex_table.html">Складна таблиця</a> |
+            <a href="https://prometheus.org.ua/" target="_blank">Prometheus</a>
+        </nav>
     </header>
 
-    <main>
+    <main style="padding: 20px;">
         <section>
             <h2>Наші викладачі</h2>
-            <article>
-                <h3>Станіслав Ковальчук</h3>
-                <p>Посада: Засновник та викладач програмування і математики.</p>
-                <p>Про себе: Захоплюється Python та веб-розробкою. Має досвід у створенні інтерактивних навчальних матеріалів.</p>
-                <p>Контакт: </p>
+            <article id="kovalchuk_stanislav">
+                <h3 class="teacher-name">Ковальчук Станіслав</h3>
+                <p>Посада: Засновник та викладач математики та веб-програмування.</p>
+                <p>Про себе: Захоплюється викладанням математики та створенням сучасних веб-застосунків. Має багаторічний досвід підготовки учнів до НМТ з математики.</p>
+                <img src="/photo_2025-01-09_11-03-47.jpg" alt="Ковальчук Станіслав (мале зображення)" width="100" height="100">
+                <a href="/photo_2025-01-09_11-03-47.jpg" target="_blank">
+                    <img src="/photo_2025-01-09_11-03-47.jpg" alt="Збільшене зображення Ковальчука" width="35" height="45">
+                </a>
             </article>
 
-            <article>
-                <h3>Марія Сидоренко</h3>
-                <p>Посада: Методист з програмування.</p>
-                <p>Про себе: Експерт у розробці навчальних програм та методик викладання програмування для різних рівнів.</p>
-                <p>Контакт: ...</p>
+            <article id="khomych_nazariy">
+                <h3 class="teacher-name">Хомич Назарій</h3>
+                <p>Посада: Викладач Python програмування.</p>
+                <p>Про себе: Експерт у галузі Python розробки та навчання програмуванню з нуля. Вміє пояснювати складні речі просто та цікаво.</p>
+                <img src="khomych_small.jpg" alt="Хомич Назарій (мале зображення)" width="100" height="100">
+                <a href="khomych_large.jpg" target="_blank">
+                    <img src="khomych_small_link.jpg" alt="Збільшене зображення Хомича" width="50" height="50">
+                </a>
             </article>
 
-            <article>
-                <h3>Олексій Коваленко</h3>
-                <p>Посада: Викладач математики та інформатики.</p>
-                <p>Про себе: Вміє знаходити цікаві зв'язки між математикою та програмуванням, роблячи навчання захопливим.</p>
-                <p>Контакт: ...</p>
+            <article id="panasyuk_kateryna">
+                <h3 class="teacher-name">Панасюк Катерина</h3>
+                <p>Посада: Викладачка біології.</p>
+                <p>Про себе: Закохана в біологію та вміє передати цю любов своїм учням. Готує до успішного складання іспитів та розуміння живих систем.</p>
+                <img src="panasyuk_small.jpg" alt="Панасюк Катерина (мале зображення)" width="100" height="100">
+                <a href="panasyuk_large.jpg" target="_blank">
+                    <img src="panasyuk_small_link.jpg" alt="Збільшене зображення Панасюк" width="50" height="50">
+                </a>
             </article>
-
-            
         </section>
     </main>
 
-    <footer>
+    <footer style="padding: 10px; background-color: #ddd; text-align: center;">
         <p>&copy; 2025 Kodemy. Всі права захищено.</p>
     </footer>
 </body>
