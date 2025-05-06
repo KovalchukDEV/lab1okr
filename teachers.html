@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kodemy - Викладачі</title>
-    <style>
-        .teacher-name { font-size: 1.1em; font-weight: bold; color: #555; }
-    </style>
-</head>
-<body style="background-color: #ceffa3;">
-    <header style="padding: 20px;">
+    <link rel="stylesheet" href="/styles.css">
+    </head>
+<body>
+    <header>
         <h1>Наша команда викладачів</h1>
         <nav>
+            <a href="/index.html">Головна</a> |
             <a href="/courses.html">Курси</a> |
             <a href="/teachers.html">Викладачі</a> |
             <a href="/aboutus.html">Про нас</a> |
@@ -23,15 +22,16 @@
     <main style="padding: 20px;">
         <section>
             <h2>Наші викладачі</h2>
-            <article id="kovalchuk_stanislav">
-                <h3 class="teacher-name">Ковальчук Станіслав</h3>
-                <p>Посада: Засновник та викладач математики та веб-програмування.</p>
-                <p>Про себе: Захоплюється викладанням математики та створенням сучасних веб-застосунків. Має багаторічний досвід підготовки учнів до НМТ з математики.</p>
-                <img src="/photo_2025-01-09_11-03-47.jpg" alt="Ковальчук Станіслав (мале зображення)" width="100" height="100">
-                <a href="/photo_2025-01-09_11-03-47.jpg" target="_blank">
-                    <img src="/photo_2025-01-09_11-03-47.jpg" alt="Збільшене зображення Ковальчука" width="35" height="45">
-                </a>
-            </article>
+<article id="kovalchuk_stanislav">
+    <h3 class="teacher-name">Ковальчук Станіслав</h3>
+    <p>Посада: Засновник школи та викладач математики і веб-програмування.</p>
+    <p>Про себе: Захоплюється викладанням математики та створенням сучасних веб-застосунків. Має багаторічний досвід підготовки учнів до НМТ з математики.</p>
+    
+    <a href="/img/photo_2025-01-09_11-03-47.jpg" target="_blank" title="Натисніть, щоб збільшити">
+        <img src="/img/photo_2025-01-09_11-03-47.jpg" alt="Ковальчук Станіслав" width="150" height="150">
+    </a>
+</article>
+
 
             <article id="khomych_nazariy">
                 <h3 class="teacher-name">Хомич Назарій</h3>
@@ -55,7 +55,7 @@
         </section>
     </main>
 
-    <footer style="padding: 10px; background-color: #ddd; text-align: center;">
+    <footer>
         <p>&copy; 2025 Kodemy. Всі права захищено.</p>
     </footer>
 </body>
