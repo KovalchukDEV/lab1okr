@@ -153,3 +153,81 @@ footer {
     border-radius: 10px;
     font-size: 0.9em;
 }
+.lab5-demo {
+    margin-top: 40px;
+    background-color: #f0fcff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* блочні елементи */
+.float-box {
+    width: 45%;
+    padding: 15px;
+    margin: 10px;
+    background-color: #e0f7ff;
+    border: 2px solid #05AFF2;
+    border-radius: 8px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.centered-box {
+    clear: both;
+    background-color: #c7f4ff;
+    padding: 20px;
+    margin-top: 80px;
+    position: relative;
+}
+
+/* рядковий елемент */
+.highlight {
+    color: #00789e;
+    font-weight: bold;
+    background-color: #fff8b3;
+    padding: 2px 6px;
+}
+
+/* псевдокласи для посилань */
+.menu a:link {
+    color: #005580;
+}
+
+.menu a:visited {
+    color: #7f5599;
+}
+
+.menu a:hover {
+    color: #00ccff;
+    text-decoration: underline;
+}
+
+.menu a:active {
+    color: red;
+}
+
+/* псевдоклас :first-child */
+.lesson-list li:first-child {
+    font-weight: bold;
+    color: #0a5d74;
+}
+
+/* псевдоелементи */
+.lesson-list li::before {
+    content: "📘 ";
+    margin-right: 4px;
+}
+
+header::before {
+    content: "🔷 ";
+}
+
+header::after {
+    content: " 🔷";
+}
