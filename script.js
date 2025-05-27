@@ -1,94 +1,98 @@
-function internalDialogs() {
-    alert("Ласкаво просимо на Kodemy!");
-    const name = prompt("Як вас звати?");
-    const isStudent = confirm("Ви студент?");
-    alert(`Приємно познайомитись, ${name}! Студент: ${isStudent ? "так" : "ні"}`);
-}
-
-// ===== 2. Функція «Діалог з користувачем» із змінними, умовами, циклами =====
+// 1.1 alert, prompt, confirm
 function dialogWithUser() {
-    let userName = prompt("Введіть ваше ім'я:");
-    while (!userName) {
-        userName = prompt("Будь ласка, введіть ваше ім'я ще раз:");
-    }
-
-    let age = prompt("Скільки вам років?");
-    age = parseInt(age);
-
-    if (isNaN(age)) {
-        alert("Введено некоректний вік.");
+    const name = prompt("Як тебе звати?");
+    if (!name) {
+        alert("Ви не ввели ім'я.");
         return;
     }
 
-    if (age < 12) {
-        alert(`Привіт, ${userName}! Тобі ще зарано до школи Kodemy 😉`);
-    } else if (age <= 18) {
-        alert(`Привіт, ${userName}! Ми маємо чудові курси для школярів!`);
+    const wantsToLearn = confirm(`Привіт, ${name}! Хочеш почати навчання з Kodemy?`);
+    if (wantsToLearn) {
+        alert("Чудово! Kodemy чекає на тебе!");
     } else {
-        alert(`Привіт, ${userName}! У нас є програма для дорослих також!`);
+        alert("Можливо, наступного разу.");
     }
 }
 
-// ===== 3. Функція про розробника =====
-function showDeveloperInfo(surname, name, position = "Розробник сайту") {
-    alert(`Розробник: ${surname} ${name}\nПосада: ${position}`);
+// 1.2 Інформація про розробника
+function showDeveloperInfo(lastName, firstName, position = "Викладач програмування") {
+    alert(`Інформація про розробника:\nПрізвище: ${lastName}\nІм'я: ${firstName}\nПосада: ${position}`);
 }
 
-// ===== 4. Функція порівняння рядків =====
+// 1.3 Порівняння рядків
 function compareStrings(str1, str2) {
     if (str1.length > str2.length) {
-        alert(`Більший рядок: ${str1}`);
+        alert(`Рядок "${str1}" довший.`);
     } else if (str2.length > str1.length) {
-        alert(`Більший рядок: ${str2}`);
+        alert(`Рядок "${str2}" довший.`);
     } else {
         alert("Рядки однакової довжини.");
     }
 }
 
-// ===== 5. DOM: зміна фону сторінки на 30 секунд =====
+// 2.1 Зміна фону
 function changeBackgroundFor30Seconds() {
-    const original = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#f0e68c";
+    const originalColor = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "#fdf3d1";
     setTimeout(() => {
-        document.body.style.backgroundColor = original;
+        document.body.style.backgroundColor = originalColor;
     }, 30000);
 }
 
-// ===== 6. BOM: Перенаправлення на іншу сторінку =====
-function redirectToPrometheus() {
-    location.href = "https://prometheus.org.ua/";
+// 2.2 Перенаправлення
+function redirectToCourses() {
+    location.href = "/courses.html";
 }
 
-// ===== 7. DOM-робота з елементами: getElementById, querySelectorAll і т.д. =====
+// 2.3 getElementById
+const paragraph = document.getElementById("main-page-paragraph");
+if (paragraph) {
+    paragraph.style.fontWeight = "bold";
+    paragraph.innerHTML += " (оновлено через JavaScript)";
+}
+
+// 2.4 querySelectorAll — зміна кольору посилань
+document.querySelectorAll("a").forEach(link => {
+    link.style.color = "blue";
+});
+
+// 2.5 Властивості DOM-вузлів
 function modifyPageContent() {
-    // innerHTML, textContent, outerHTML
-    const mainPara = document.getElementById("main-page-paragraph");
-    if (mainPara) {
-        mainPara.textContent += " (оновлено скриптом)";
+    const ul = document.querySelector(".lesson-list");
+
+    // innerHTML
+    const newLesson = document.createElement("li");
+    newLesson.innerHTML = "Урок 4: Основи DOM";
+    ul.appendChild(newLesson);
+
+    // outerHTML
+    const heading = document.querySelector("h2");
+    console.log("outerHTML:", heading.outerHTML);
+
+    // textContent
+    console.log("Зміст заголовку:", heading.textContent);
+
+    // Створення елементів
+    const infoDiv = document.createElement("div");
+    infoDiv.textContent = "Kodemy — навчайся з нами!";
+    document.body.appendChild(infoDiv);
+
+    // Вставка елементів різними методами
+    const span = document.createElement("span");
+    span.textContent = " [нове]";
+    ul.lastChild.append(span);
+
+    // replaceWith
+    const highlight = document.querySelector(".highlight");
+    if (highlight) {
+        const strong = document.createElement("strong");
+        strong.textContent = highlight.textContent;
+        highlight.replaceWith(strong);
     }
 
-    // querySelectorAll
-    const highlights = document.querySelectorAll(".highlight");
-    highlights.forEach(el => {
-        el.style.color = "blue";
-        el.style.fontWeight = "bold";
-    });
-
-    // Створення та вставка елементів
-    const newEl = document.createElement("div");
-    newEl.textContent = "Цей блок створено JavaScript!";
-    document.body.append(newEl);
-
-    const textNode = document.createTextNode("Додатковий текст.");
-    newEl.appendChild(textNode);
-
-    const afterEl = document.createElement("p");
-    afterEl.textContent = "Елемент після таблиці.";
-    const table = document.querySelector("table");
-    table?.after(afterEl);
-
-    // Видалення вузла
-    setTimeout(() => {
-        newEl.remove();
-    }, 10000);
+    // remove
+    const navMenu = document.querySelector(".menu");
+    if (navMenu) {
+        navMenu.remove(); // демонстрація видалення
+    }
 }
