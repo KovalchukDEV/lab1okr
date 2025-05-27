@@ -96,3 +96,83 @@ function modifyPageContent() {
         navMenu.remove(); // демонстрація видалення
     }
 }
+
+// --- Атрибут у HTML (onmouseover="hoverMessage(this)") ---
+function hoverMessage(el) {
+    el.style.backgroundColor = "#e0f7fa";
+    alert("КУРСИ У ПРОДАЖІ З 1 червня!!!");
+}
+
+// --- Через властивість ---
+const header = document.querySelector("h1");
+if (header) {
+    header.onclick = function () {
+        alert("Kodemy вітає вас!!");
+    };
+}
+
+// --- addEventListener: декілька обробників ---
+if (paragraph) {
+    function handler1() {
+        console.log("Обробник 1");
+    }
+    function handler2() {
+        console.log("Обробник 2");
+    }
+
+    paragraph.addEventListener("click", handler1);
+    paragraph.addEventListener("click", handler2);
+
+    // --- Видалення одного з обробників через 10 секунд ---
+    setTimeout(() => {
+        paragraph.removeEventListener("click", handler2);
+        console.log("handler2 видалено через removeEventListener");
+    }, 10000);
+}
+
+// --- Об'єкт з handleEvent ---
+const eventLogger = {
+    handleEvent(event) {
+        console.log("Обробник через об’єкт:", event.currentTarget);
+        alert(`Обробник об’єкта активовано на елементі: ${event.currentTarget.tagName}`);
+    }
+};
+
+const logoBox = document.querySelector(".centered-box");
+if (logoBox) {
+    logoBox.addEventListener("click", eventLogger);
+}
+
+// === 2) Делегування: підсвічування списку ===
+const courseList = document.getElementById("course-list");
+
+if (courseList) {
+    courseList.onclick = function (event) {
+        const target = event.target;
+        if (target.tagName === "LI") {
+            target.style.backgroundColor = "#d0f0c0";
+        }
+    };
+}
+
+// === Меню з data-* атрибутами (поведінка) ===
+const menu = document.getElementById("course-menu");
+
+const behaviors = {
+    showMath: () => alert("Курс математики: алгебра, геометрія, підготовка до НМТ."),
+    showProgramming: () => alert("Курс програмування: HTML, CSS, JS, Python."),
+    highlightAll: () => {
+        document.querySelectorAll("#course-list li").forEach(li => {
+            li.style.backgroundColor = "#fff3cd";
+        });
+    }
+};
+
+if (menu) {
+    menu.addEventListener("click", function (event) {
+        const behavior = event.target.dataset.behavior;
+        if (behavior && behaviors[behavior]) {
+            behaviors[behavior]();
+        }
+    });
+}

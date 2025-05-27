@@ -22,6 +22,7 @@
     </header>
 
     <main>
+
         <section>
             <h2>Основні напрямки навчання</h2>
             <ul>
@@ -52,11 +53,31 @@
             </ul>
 
             <nav class="menu">
-                <a href="#">Головна</a>
-                <a href="#">Курси</a>
-                <a href="#">Контакти</a>
+                <a href="/index.html">Головна</a> |
+                <a href="/courses.html">Курси</a> |
+                <a href="/aboutus.html">Про нас</a> |
             </nav>
         </section>
+
+        <section>
+    <h2>Інтерактивне меню курсу</h2>
+    
+    <div id="course-menu">
+        <button data-behavior="showMath">Математика</button>
+        <button data-behavior="showProgramming">Програмування</button>
+        <button data-behavior="highlightAll">Підсвітити все</button>
+    </div>
+
+    <ul id="course-list">
+        <li>HTML & CSS</li>
+        <li>JavaScript Основи</li>
+        <li>Python для початківців</li>
+        <li>Підготовка до НМТ</li>
+    </ul>
+</section>
+ 
+<p onmouseover="hoverMessage(this)">Курс у продажі з .....</p> 
+
 
         <section>
             <h2>Таблиця з інформацією</h2>
